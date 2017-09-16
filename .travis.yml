@@ -7,10 +7,8 @@ skip_cleanup: true
 before_install:
   - chmod +x utils/build.sh
   - chmod +x utils/deploy.sh
-  - chmod +x utils/test.sh
 script:
-  - utils/build.sh --quiet verify,
-  - utils/test.sh,
+  - utils/build.sh --quiet verify
 branches:
   only:
   - master

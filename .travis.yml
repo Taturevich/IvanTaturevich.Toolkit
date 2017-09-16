@@ -19,4 +19,7 @@ deploy:
   script:
     - utils/deploy.sh --quiet verify
   on:
-    branch: develop
+    branches:
+      only:
+      - master
+      - develop

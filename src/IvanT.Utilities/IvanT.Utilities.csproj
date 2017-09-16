@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>IvanT.Utilities</AssemblyName>
-    <PackageId>Utilities</PackageId>
-    <Version>1.0.0.10-alpha000002</Version>
+    <PackageId>IvanT.Utilities</PackageId>
+    <Version>1.0.0.11</Version>
     <Authors>IvanTaturevich</Authors>
     <AssemblyDescription>Set of helper classes and extensions for faster .net application development</AssemblyDescription>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>

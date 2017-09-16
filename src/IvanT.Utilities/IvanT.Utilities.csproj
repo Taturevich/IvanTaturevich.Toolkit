@@ -4,9 +4,12 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>IvanT.Utilities</AssemblyName>
     <PackageId>IvanT.Utilities</PackageId>
-    <Version>1.0.0.11</Version>
-    <Authors>IvanTaturevich</Authors>
-    <AssemblyDescription>Set of helper classes and extensions for faster .net application development</AssemblyDescription>
+    <Version>1.0.0.12</Version>
+    <Authors>Ivan Taturevich</Authors>
+    <PackageTags>.net;Extensions;Utilities;Serialization</PackageTags>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Taturevich/IvanTaturevich.Toolkit</PackageProjectUrl>
+    <Description>Set of helper classes and extensions for faster .net application development</Description>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>

@@ -8,24 +8,17 @@ before_install:
   - chmod +x utils/build.sh
   - chmod +x utils/deploy.sh
   - chmod +x utils/test.sh
-jobs:
-  include:
-    - stage: build
-      script:
-      - utils/build.sh --quiet verify
-      branches:
-        only:
-        - master
-        - develop
-    - stage: test
-      skip_cleanup: true
-      script:
-        - utils/test.sh --quiet verify
-    - stage: deploy
-      deploy:
-        skip_cleanup: true
-        provider: script
-        script:
-          - utils/deploy.sh --quiet verify
-        on:
-          branch: develop
+script:
+  - utils/build.sh --quiet verify,
+  - utils/test.sh --quiet verify,
+branches:
+  only:
+  - master
+  - develop
+deploy:
+  skip_cleanup: true
+  provider: script
+  script:
+    - utils/deploy.sh --quiet verify
+  on:
+    branch: develop

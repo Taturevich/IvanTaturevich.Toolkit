@@ -13,4 +13,20 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
+  </ItemGroup>
+  
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CodeAnalysisRuleSet>..\..\IvanTaturevich.Toolkit.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\IvanT.Utilities\IvanT.Utilities.csproj" />
+  </ItemGroup>
+
 </Project>

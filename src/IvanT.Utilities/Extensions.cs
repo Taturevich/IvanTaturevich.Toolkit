@@ -101,11 +101,16 @@ namespace IvanT.Utilities
         /// </summary>
         /// <param name="action">action to repeat</param>
         /// <param name="repeatCount">repeat number</param>
-        public static void RepeatAction(this Action action, int repeatCount)
+        public static void RepeatAction(Action action, int repeatCount)
         {
+            if (action == null)
+            {
+                throw new ArgumentException("Your repeating action is empty");
+            }
+
             for (var i = 0; i < repeatCount; i++)
             {
-                action();
+                action.Invoke();
             }
         }
     }

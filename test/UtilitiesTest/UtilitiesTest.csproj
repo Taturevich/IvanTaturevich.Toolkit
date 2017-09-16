@@ -16,9 +16,11 @@
   <ItemGroup>
     <AdditionalFiles Include="..\..\stylecop.json">
       <Link>stylecop.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AdditionalFiles>
     <AdditionalFiles Include="..\..\IvanTaturevich.Toolkit.ruleset">
       <Link>IvanTaturevich.Toolkit.ruleset</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AdditionalFiles>
   </ItemGroup>
   

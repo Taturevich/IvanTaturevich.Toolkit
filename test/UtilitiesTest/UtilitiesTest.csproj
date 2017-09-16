@@ -17,6 +17,9 @@
     <AdditionalFiles Include="..\..\stylecop.json">
       <Link>stylecop.json</Link>
     </AdditionalFiles>
+    <AdditionalFiles Include="..\..\IvanTaturevich.Toolkit.ruleset">
+      <Link>IvanTaturevich.Toolkit.ruleset</Link>
+    </AdditionalFiles>
   </ItemGroup>
   
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

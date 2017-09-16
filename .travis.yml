@@ -10,7 +10,7 @@ before_install:
   - chmod +x utils/test.sh
 script:
   - utils/build.sh --quiet verify,
-  - utils/test.sh --quiet verify,
+  - utils/test.sh,
 branches:
   only:
   - master

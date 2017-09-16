@@ -1,1 +1,1 @@
-cd test && dotnet test
+dotnet test

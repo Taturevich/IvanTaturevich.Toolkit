@@ -1,0 +1,34 @@
+﻿{
+  "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+  "settings": {
+
+    "indentation": {
+      "useTabs": false
+    },
+    "documentationRules":
+    {
+      "xmlHeader": false,
+      "copyrightText": "{decorator}\r\nLicensed under the MIT license.\r\nSee LICENSE file in the project root for full license information.\r\nCopyright (c) 2017  Ivan Taturevich\r\n{decorator}",
+      "variables": {
+        "decorator": "--------------------------------------------------------------------"}
+    },
+    "namingRules": {
+      "allowCommonHungarianPrefixes": true,
+      "allowedHungarianPrefixes": [
+        "db",
+        "do",
+        "id",
+        "if",
+        "in",
+        "is",
+        "my",
+        "no",
+        "on",
+        "to",
+        "ui",
+        "vm",
+        "h"
+      ]
+    }
+  }
+}

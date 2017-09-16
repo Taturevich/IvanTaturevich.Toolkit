@@ -4,31 +4,45 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>IvanT.Utilities</AssemblyName>
     <PackageId>IvanT.Utilities</PackageId>
-    <Version>1.0.0.11</Version>
-    <Authors>IvanTaturevich</Authors>
-    <AssemblyDescription>Set of helper classes and extensions for faster .net application development</AssemblyDescription>
+    <Version>1.0.0.13-alpha000021</Version>
+    <Authors>Ivan Taturevich</Authors>
+    <PackageTags>.net;Extensions;Utilities;Serialization</PackageTags>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Taturevich/IvanTaturevich.Toolkit</PackageProjectUrl>
+    <Description>Set of helper classes and extensions for faster .net application development</Description>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="MSBump" Version="*" />
+    <AdditionalFiles Include="..\..\stylecop.json">
+      <Link>stylecop.json</Link>
+    </AdditionalFiles>
+    <AdditionalFiles Include="..\..\IvanTaturevich.Toolkit.ruleset">
+      <Link>IvanTaturevich.Toolkit.ruleset</Link>
+    </AdditionalFiles>
   </ItemGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <BumpLabel>alpha</BumpLabel>
     <LabelDigits>3</LabelDigits>
     <WarningLevel>3</WarningLevel>
+    <CodeAnalysisRuleSet>..\..\IvanTaturevich.Toolkit.ruleset</CodeAnalysisRuleSet>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <BumpRevision>True</BumpRevision>
     <BumpResetLabel>alpha</BumpResetLabel>
+    <CodeAnalysisRuleSet>IvanT.Utilities.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   
   
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta004" />
   </ItemGroup>
 
 </Project>

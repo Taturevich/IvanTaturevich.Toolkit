@@ -1,6 +1,13 @@
-﻿using Newtonsoft.Json;
+﻿// --------------------------------------------------------------------
+// Licensed under the MIT license.
+// See LICENSE file in the project root for full license information.
+// Copyright (c) 2017  Ivan Taturevich
+// --------------------------------------------------------------------
 
-namespace Utilities
+using System;
+using Newtonsoft.Json;
+
+namespace IvanT.Utilities
 {
     /// <summary>
     /// Utilities extensions. Primary works with objects
@@ -13,7 +20,7 @@ namespace Utilities
             TypeNameHandling = TypeNameHandling.Auto,
             NullValueHandling = NullValueHandling.Ignore,
             DateTimeZoneHandling = DateTimeZoneHandling.Local,
-            ReferenceLoopHandling = ReferenceLoopHandling.Ignore
+            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
         };
 
         /// <summary>
@@ -44,9 +51,9 @@ namespace Utilities
         /// <summary>
         /// Deserializa JSON string into object
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="deserializedString"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">type of object</typeparam>
+        /// <param name="deserializedString">string to deserialize</param>
+        /// <returns>created object</returns>
         public static T ToObject<T>(this string deserializedString)
         {
             return JsonConvert.DeserializeObject<T>(deserializedString, DefaultSettings);
@@ -55,10 +62,10 @@ namespace Utilities
         /// <summary>
         /// Deserializa JSON string into object using specific settings
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="deserializedString"></param>
+        /// <typeparam name="T">type of object</typeparam>
+        /// <param name="deserializedString">string to deserialize</param>
         /// <param name="settings">possible serialization settings</param>
-        /// <returns></returns>
+        /// <returns>created object</returns>
         public static T ToObject<T>(
             this string deserializedString,
             JsonSerializerSettings settings)
@@ -67,11 +74,11 @@ namespace Utilities
         }
 
         /// <summary>
-        /// Create deep clone ob object using Json Serialization 
+        /// Create deep clone ob object using Json Serialization
         /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="source"></param>
-        /// <returns></returns>
+        /// <typeparam name="T">type of clonning object</typeparam>
+        /// <param name="source">clonning object</param>
+        /// <returns>clone of object</returns>
         public static T CloneJson<T>(this T source)
         {
             if (ReferenceEquals(source, null))
@@ -81,12 +88,30 @@ namespace Utilities
 
             var deserializeSettings = new JsonSerializerSettings
             {
-                ObjectCreationHandling = ObjectCreationHandling.Replace
+                ObjectCreationHandling = ObjectCreationHandling.Replace,
             };
 
             return JsonConvert.DeserializeObject<T>(
-                JsonConvert.SerializeObject(source), 
+                JsonConvert.SerializeObject(source),
                 deserializeSettings);
+        }
+
+        /// <summary>
+        /// Repeat action number of times
+        /// </summary>
+        /// <param name="action">action to repeat</param>
+        /// <param name="repeatCount">repeat number</param>
+        public static void RepeatAction(Action action, int repeatCount)
+        {
+            if (action == null)
+            {
+                throw new ArgumentException("Your repeating action is empty");
+            }
+
+            for (var i = 0; i < repeatCount; i++)
+            {
+                action.Invoke();
+            }
         }
     }
 }

@@ -1,5 +1,10 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿// --------------------------------------------------------------------
+// Licensed under the MIT license.
+// See LICENSE file in the project root for full license information.
+// Copyright (c) 2017  Ivan Taturevich
+// --------------------------------------------------------------------
+
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following

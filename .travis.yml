@@ -4,6 +4,10 @@ sudo required
 mono none
 dotnet 2.0.0
 skip_cleanup true
+branches:
+  only:
+  - master
+  - develop
 before_install
   - chmod +x utils/build.sh
 script

@@ -1,1 +1,1 @@
-dotnet test
+cd test/UtilitiesTest && dotnet test -c release

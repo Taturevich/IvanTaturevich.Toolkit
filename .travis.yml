@@ -1,14 +1,14 @@
-language csharp
-dist trusty
-sudo required
-mono none
-dotnet 2.0.0
-skip_cleanup true
+language: csharp
+dist: trusty
+sudo: required
+mono: none
+dotnet: 2.0.0
+skip_cleanup: true
+before_install:
+  - chmod +x utils/build.sh
+script:
+  - utils/build.sh --quiet verify
 branches:
   only:
   - master
   - develop
-before_install
-  - chmod +x utils/build.sh
-script
-  - utils/build.sh --quiet verify

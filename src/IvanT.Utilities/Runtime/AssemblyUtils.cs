@@ -27,7 +27,7 @@ namespace IvanT.Utilities.Runtime
         public static IEnumerable<Assembly> GetReferencingAssemblies()
         {
             var dependencies = DependencyContext.Default.RuntimeLibraries;
-            var currentAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+            var currentAssemblyName = Assembly.GetEntryAssembly().GetName().Name;
 
             return from library in dependencies
                    where IsCandidateLibrary(library, currentAssemblyName)

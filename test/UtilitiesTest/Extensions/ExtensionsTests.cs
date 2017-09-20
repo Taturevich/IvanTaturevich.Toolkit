@@ -5,13 +5,25 @@
 // --------------------------------------------------------------------
 
 using System;
+using System.Diagnostics;
+using System.Linq;
+using IvanT.Utilities.Pool;
+using IvanT.Utilities.Runtime;
 using Xunit;
+using Xunit.Abstractions;
 using static IvanT.Utilities.Extensions;
 
 namespace UtilitiesTest.Extensions
 {
     public class ExtensionsTests
     {
+        private readonly ITestOutputHelper _output;
+
+        public ExtensionsTests(ITestOutputHelper output)
+        {
+            _output = output;
+        }
+
         [Fact]
         public void RepeatAction_WhenActionProvided_ShouldRepeatProvidedAction()
         {

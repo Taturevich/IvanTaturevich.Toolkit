@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>IvanT.Utilities</AssemblyName>
     <PackageId>IvanT.Utilities</PackageId>
-    <Version>1.0.0.13-alpha000021</Version>
+    <Version>1.0.0.15</Version>
     <Authors>Ivan Taturevich</Authors>
     <PackageTags>.net;Extensions;Utilities;Serialization</PackageTags>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
@@ -18,9 +18,11 @@
     <PackageReference Include="MSBump" Version="*" />
     <AdditionalFiles Include="..\..\stylecop.json">
       <Link>stylecop.json</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AdditionalFiles>
     <AdditionalFiles Include="..\..\IvanTaturevich.Toolkit.ruleset">
       <Link>IvanTaturevich.Toolkit.ruleset</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AdditionalFiles>
   </ItemGroup>
 

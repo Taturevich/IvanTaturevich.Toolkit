@@ -5,6 +5,8 @@
 // --------------------------------------------------------------------
 
 using System;
+using System.Collections.Generic;
+using IvanT.Utilities.Caching;
 using Newtonsoft.Json;
 
 namespace IvanT.Utilities
@@ -112,6 +114,17 @@ namespace IvanT.Utilities
             {
                 action.Invoke();
             }
+        }
+
+        /// <summary>
+        /// Converts enumrable to caching list
+        /// </summary>
+        /// <typeparam name="T">enumarting type</typeparam>
+        /// <param name="source">enumaration source</param>
+        /// <returns>lazy list</returns>
+        public static LazyList<T> ToLazyList<T>(this IEnumerable<T> source)
+        {
+            return new LazyList<T>(source);
         }
     }
 }

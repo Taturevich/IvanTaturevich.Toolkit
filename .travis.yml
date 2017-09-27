@@ -7,8 +7,13 @@ skip_cleanup: true
 before_install:
   - chmod +x utils/build.sh
   - chmod +x utils/deploy.sh
+before_script:
+  - choco install opencover.portable
+  - choco install codecov
 script:
   - utils/build.sh --quiet verify
+  - OpenCover.Console.exe -register:user -target:"%xunit20%\xunit.console.x86.exe" -targetargs:".\test\UtilitiesTest\bin\Release\netcoreapp2.0\UtilitiesTest.dll -noshadow" -filter:"+[IvanT.Utilities]*" -output:".\Toolkit_coverage.xml"
+  - codecov -f "Toolkit_coverage.xml
 branches:
   only:
   - master

@@ -22,7 +22,6 @@ namespace IvanT.Utilities
             TypeNameHandling = TypeNameHandling.Auto,
             NullValueHandling = NullValueHandling.Ignore,
             DateTimeZoneHandling = DateTimeZoneHandling.Local,
-            ReferenceLoopHandling = ReferenceLoopHandling.Ignore,
         };
 
         /// <summary>

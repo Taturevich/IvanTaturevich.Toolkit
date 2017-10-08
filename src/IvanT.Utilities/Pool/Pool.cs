@@ -48,5 +48,22 @@ namespace IvanT.Utilities.Pool
         {
             _objects.Add(item);
         }
+
+        /// <summary>
+        /// Executed action againts initilized pool
+        /// </summary>
+        /// <param name="poolExecutedFunction">function definition</param>
+        public void Execute(Action<T> poolExecutedFunction)
+        {
+            var instanceFromPool = Get();
+            try
+            {
+                poolExecutedFunction(instanceFromPool);
+            }
+            finally
+            {
+                Put(instanceFromPool);
+            }
+        }
     }
 }

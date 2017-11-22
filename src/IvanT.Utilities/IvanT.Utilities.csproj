@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>IvanT.Utilities</AssemblyName>
     <PackageId>IvanT.Utilities</PackageId>
-    <Version>1.0.0.29</Version>
+    <Version>1.0.0.30</Version>
     <Authors>Ivan Taturevich</Authors>
     <PackageTags>.net;Extensions;Utilities;Serialization</PackageTags>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>

@@ -73,14 +73,18 @@ namespace IvanT.Utilities.Caching
         /// <param name="disposing">disposing flag</param>
         protected virtual void Dispose(bool disposing)
         {
-            if (disposing)
+            if (!disposing)
             {
-                if (_sourceEnumerator != null)
-                {
-                    _sourceEnumerator.Dispose();
-                    _sourceEnumerator = null;
-                }
+                return;
             }
+
+            if (_sourceEnumerator == null)
+            {
+                return;
+            }
+            
+            _sourceEnumerator.Dispose();
+            _sourceEnumerator = null;
         }
 
         private class LazyListEnumerator : IEnumerator<T>

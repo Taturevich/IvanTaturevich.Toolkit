@@ -5,10 +5,6 @@
 // --------------------------------------------------------------------
 
 using System;
-using System.Diagnostics;
-using System.Linq;
-using IvanT.Utilities.Pool;
-using IvanT.Utilities.Runtime;
 using Xunit;
 using Xunit.Abstractions;
 using static IvanT.Utilities.Extensions;

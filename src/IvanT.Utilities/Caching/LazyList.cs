@@ -82,7 +82,7 @@ namespace IvanT.Utilities.Caching
             {
                 return;
             }
-            
+
             _sourceEnumerator.Dispose();
             _sourceEnumerator = null;
         }

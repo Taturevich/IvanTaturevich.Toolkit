@@ -2,6 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>Ivan Taturevich</Authors>
+    <Company />
+    <Product>IvanT.EntityFramework</Product>
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Taturevich/IvanTaturevich.Toolkit</PackageProjectUrl>
+    <PackageTags>.net;Extensions;EntityFramework.Core;Repository;Bulk Operations</PackageTags>
+    <PackageReleaseNotes>initial version</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,10 +28,6 @@
     <CodeAnalysisRuleSet>..\..\IvanTaturevich.Toolkit.ruleset</CodeAnalysisRuleSet>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <CodeAnalysisRuleSet>IvanT.Utilities.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
 
   <ItemGroup>

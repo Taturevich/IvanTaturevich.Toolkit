@@ -1,2 +1,2 @@
-cd src/IvanT.Utilities && dotnet pack IvanT.Utilities.csproj -c release -o . && dotnet nuget push *.nupkg -s http://taturevichnugetserver.azurewebsites.net/nuget/packages?replace=true &&
-cd /src/IvanT.EntityFramework && dotnet pack IvanT.EntityFramework.csproj -c release -o . && dotnet nuget push *.nupkg -s http://taturevichnugetserver.azurewebsites.net/nuget/packages?replace=true
+cd src/IvanT.Utilities && dotnet pack IvanT.Utilities.csproj -c release -o . && dotnet nuget push *.nupkg -s http://taturevichnugetserver.azurewebsites.net &&
+cd /src/IvanT.EntityFramework && dotnet pack IvanT.EntityFramework.csproj -c release -o . && dotnet nuget push *.nupkg -s http://taturevichnugetserver.azurewebsites.net

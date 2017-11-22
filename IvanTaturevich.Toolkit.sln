@@ -1,17 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{30DB28C5-0130-4F1F-8D4D-5FAB70B4F5AB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{4C843EBE-EC97-48D0-982B-1F472776FB8A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utilities", "src\Utilities\Utilities.csproj", "{D326E5CD-BE40-44B4-A09E-2CC88FAB33A9}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UtilitiesTest", "test\UtilitiesTest\UtilitiesTest.csproj", "{7E30FEC0-B0D5-485E-A2CD-3B839D9FA48A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{B961BA17-9785-4F8E-A13B-F1B2EF5C7670}"
+	ProjectSection(SolutionItems) = preProject
+		utils\build.sh = utils\build.sh
+		utils\deploy.sh = utils\deploy.sh
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IvanT.Utilities", "src\IvanT.Utilities\IvanT.Utilities.csproj", "{949EA4BC-F224-4547-A188-36CE57DA1337}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IvanT.EntityFramework", "src\IvanT.EntityFramework\IvanT.EntityFramework.csproj", "{F518FCEF-C341-4A59-8E61-CF5C4C4957E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,21 +25,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D326E5CD-BE40-44B4-A09E-2CC88FAB33A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D326E5CD-BE40-44B4-A09E-2CC88FAB33A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D326E5CD-BE40-44B4-A09E-2CC88FAB33A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D326E5CD-BE40-44B4-A09E-2CC88FAB33A9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7E30FEC0-B0D5-485E-A2CD-3B839D9FA48A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{7E30FEC0-B0D5-485E-A2CD-3B839D9FA48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E30FEC0-B0D5-485E-A2CD-3B839D9FA48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E30FEC0-B0D5-485E-A2CD-3B839D9FA48A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{949EA4BC-F224-4547-A188-36CE57DA1337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{949EA4BC-F224-4547-A188-36CE57DA1337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{949EA4BC-F224-4547-A188-36CE57DA1337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{949EA4BC-F224-4547-A188-36CE57DA1337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F518FCEF-C341-4A59-8E61-CF5C4C4957E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F518FCEF-C341-4A59-8E61-CF5C4C4957E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F518FCEF-C341-4A59-8E61-CF5C4C4957E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F518FCEF-C341-4A59-8E61-CF5C4C4957E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{D326E5CD-BE40-44B4-A09E-2CC88FAB33A9} = {30DB28C5-0130-4F1F-8D4D-5FAB70B4F5AB}
 		{7E30FEC0-B0D5-485E-A2CD-3B839D9FA48A} = {4C843EBE-EC97-48D0-982B-1F472776FB8A}
+		{949EA4BC-F224-4547-A188-36CE57DA1337} = {30DB28C5-0130-4F1F-8D4D-5FAB70B4F5AB}
+		{F518FCEF-C341-4A59-8E61-CF5C4C4957E4} = {30DB28C5-0130-4F1F-8D4D-5FAB70B4F5AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B2273E7A-BD5B-4D38-83A8-3DC0BAFF4792}

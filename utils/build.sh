@@ -1,1 +1,1 @@
-dotnet restore && dotnet build -c release
+cd test/UtilitiesTest && dotnet test -c release && cd ./ && dotnet restore && dotnet build -c release

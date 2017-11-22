@@ -6,9 +6,17 @@ dotnet: 2.0.0
 skip_cleanup: true
 before_install:
   - chmod +x utils/build.sh
+  - chmod +x utils/deploy.sh
 script:
   - utils/build.sh --quiet verify
 branches:
   only:
   - master
   - develop
+deploy:
+  skip_cleanup: true
+  provider: script
+  script:
+    - utils/deploy.sh --quiet verify
+  on:
+    branch: develop

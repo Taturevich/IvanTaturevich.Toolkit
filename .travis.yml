@@ -5,7 +5,7 @@ mono: none
 dotnet: 2.1.300
 skip_cleanup: true
 env:
-  - PATH="/root/.dotnet/tools"
+  - PATH="$PATH:/root/.dotnet/tools"
 before_install:
   - dotnet tool install --global dotnet-sonarscanner
   - echo $env:PATH

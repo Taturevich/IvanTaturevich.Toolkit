@@ -11,6 +11,7 @@ before_install:
   - chmod +x utils/sonar.sh
 script:
   - utils/build.sh --quiet verify
+  - utils/sonar.sh --quiet verify
 branches:
   only:
   - master

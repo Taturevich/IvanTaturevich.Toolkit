@@ -5,20 +5,15 @@ mono: none
 dotnet: 2.1.300
 skip_cleanup: true
 env:
-  - PATH="$HOME/.dotnet/tools"
+  - PATH="$PATH:~/.dotnet/tools"
 before_install:
+  - dotnet tool install --global dotnet-sonarscanner
+  - dotnet sonarscanner begin /k:"taturevich_toolkit" /d:sonar.organization="taturevich-github" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="28d273d7cb3d188f13ceab30ea3ede984161f09f"
   - chmod +x utils/build.sh
-  - chmod +x utils/deploy.sh
+  - dotnet sonarscaner end /d:sonar.login="28d273d7cb3d188f13ceab30ea3ede984161f09f"
 script:
   - utils/build.sh --quiet verify
 branches:
   only:
   - master
   - develop
-deploy:
-  skip_cleanup: true
-  provider: script
-  script:
-    - utils/deploy.sh --quiet verify
-  on:
-    branch: develop

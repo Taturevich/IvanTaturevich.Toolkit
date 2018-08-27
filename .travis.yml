@@ -5,7 +5,7 @@ mono: none
 dotnet: 2.1.300
 skip_cleanup: true
 env:
-  - PATH="$PATH:~/.dotnet/tools"
+  - PATH="$HOME/.dotnet/tools"
 before_install:
   - chmod +x utils/build.sh
   - chmod +x utils/deploy.sh

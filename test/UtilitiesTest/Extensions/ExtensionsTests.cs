@@ -30,7 +30,7 @@ namespace UtilitiesTest.Extensions
             RepeatAction(() => testingValue++, 10);
 
             // Assert
-            Assert.Equal(testingValue, 10);
+            Assert.Equal(10, testingValue);
         }
 
         [Fact]

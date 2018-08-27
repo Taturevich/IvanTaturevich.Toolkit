@@ -5,6 +5,7 @@
 // --------------------------------------------------------------------
 
 using System;
+using System.Diagnostics;
 using System.Linq;
 using IvanT.Utilities;
 using IvanT.Utilities.Caching;
@@ -58,6 +59,7 @@ namespace UtilitiesTest.Caching
             void Action()
             {
                 var lazy = new LazyList<int>(null);
+                Debug.Write(lazy);
             }
 
             // Asssert
@@ -71,12 +73,13 @@ namespace UtilitiesTest.Caching
             var lazyCounter = 0;
             var commonCounter = 0;
             var numbers = Enumerable.Range(1, 35);
-            var lazyQuery = numbers.Select(x =>
+            var enumerable = numbers as int[] ?? numbers.ToArray();
+            var lazyQuery = enumerable.Select(x =>
             {
                 lazyCounter++;
                 return x;
             }).ToLazyList();
-            var commonQuery = numbers.Select(x =>
+            var commonQuery = enumerable.Select(x =>
             {
                 commonCounter++;
                 return x;
@@ -93,8 +96,10 @@ namespace UtilitiesTest.Caching
                 .Concat(commonQuery.Take(12)).Sum();
 
             // Assert
-            Assert.Equal(15, lazyCounter);
+            Assert.Equal(5, lazyCounter);
             Assert.Equal(35, commonCounter);
+            Assert.Equal(45, lazyEvaluating);
+            Assert.Equal(213, commonEvaluating);
         }
     }
 }

@@ -17,7 +17,7 @@
     <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="2.0.3" />
+    <PackageReference Include="Microsoft.Extensions.DependencyModel" Version="2.1.0" />
     <AdditionalFiles Include="..\..\stylecop.json">
       <Link>stylecop.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -27,17 +27,27 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AdditionalFiles>
   </ItemGroup>
-
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <WarningLevel>3</WarningLevel>
     <CodeAnalysisRuleSet>..\..\IvanTaturevich.Toolkit.ruleset</CodeAnalysisRuleSet>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
   </PropertyGroup>
-  
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
-    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta004" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="SonarAnalyzer.CSharp" Version="7.2.0.5463">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.0-beta004">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
-
+  <ItemGroup>
+    <Reference Include="System.Reflection.Emit.ILGeneration, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>C:\Users\Ivan_Taturevich\.nuget\packages\system.reflection.emit.ilgeneration\4.0.1\ref\netstandard1.0\System.Reflection.Emit.ILGeneration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reflection.Emit.Lightweight, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <HintPath>C:\Users\Ivan_Taturevich\.nuget\packages\system.reflection.emit.lightweight\4.0.1\ref\netstandard1.0\System.Reflection.Emit.Lightweight.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

@@ -21,7 +21,7 @@ namespace IvanT.Utilities.Pool
         /// <param name="objectFactory">creation object function</param>
         public Pool(Func<T> objectFactory)
         {
-            _objectFactory = objectFactory ?? throw new ArgumentNullException("Object initializer factory cannot be null");
+            _objectFactory = objectFactory ?? throw new ArgumentNullException(nameof(objectFactory), "Object initializer factory cannot be null");
             _objects = new ConcurrentBag<T>();
         }
 
@@ -32,7 +32,7 @@ namespace IvanT.Utilities.Pool
         /// <param name="initialObjectNumber">number of initialized objects in pool</param>
         public Pool(Func<T> objectFactory, int initialObjectNumber)
         {
-            _objectFactory = objectFactory ?? throw new ArgumentNullException("Object initializer factory cannot be null");
+            _objectFactory = objectFactory ?? throw new ArgumentNullException(nameof(objectFactory), "Object initializer factory cannot be null");
             _objects = new ConcurrentBag<T>();
             Extensions.RepeatAction(() => Put(objectFactory()), initialObjectNumber);
         }

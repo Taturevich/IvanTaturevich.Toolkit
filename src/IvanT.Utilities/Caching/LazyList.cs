@@ -87,7 +87,7 @@ namespace IvanT.Utilities.Caching
             _sourceEnumerator = null;
         }
 
-        private class LazyListEnumerator : IEnumerator<T>
+        private sealed class LazyListEnumerator : IEnumerator<T>
         {
             private const int StartIndex = -1;
 
@@ -128,7 +128,7 @@ namespace IvanT.Utilities.Caching
                         }
                         else
                         {
-                            result = !_lazyList.IsAllElementsAreCached && _lazyList._sourceEnumerator.MoveNext();
+                            result = !_lazyList.IsAllElementsAreCached && _lazyList._sourceEnumerator != null && _lazyList._sourceEnumerator.MoveNext();
                             if (result)
                             {
                                 Current = _lazyList._sourceEnumerator.Current;
@@ -137,7 +137,7 @@ namespace IvanT.Utilities.Caching
                             else if (!_lazyList.IsAllElementsAreCached)
                             {
                                 _lazyList.IsAllElementsAreCached = true;
-                                _lazyList._sourceEnumerator.Dispose();
+                                _lazyList?._sourceEnumerator?.Dispose();
                             }
                         }
                     }
@@ -151,10 +151,10 @@ namespace IvanT.Utilities.Caching
                 _index = StartIndex;
             }
 
+            /// <summary>Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.</summary>
             public void Dispose()
             {
-                // The _lazyList._sourceEnumerator
-                // is disposed in LazyList
+                _lazyList?.Dispose();
             }
 
             private void SetCurrentToIndex()

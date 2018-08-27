@@ -4,8 +4,9 @@ sudo: required
 mono: none
 dotnet: 2.1.300
 skip_cleanup: true
+env:
+  - PATH="$PATH:~/.dotnet/tools"
 before_install:
-  - export PATH="$PATH:~/.dotnet/tools"
   - chmod +x utils/build.sh
   - chmod +x utils/deploy.sh
 script:

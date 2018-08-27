@@ -5,7 +5,7 @@ mono: none
 dotnet: 2.1.300
 skip_cleanup: true
 before_install:
-  - export PATH="$PATH:/home/travis/.dotnet/tools"
+  - export PATH="$PATH:~/.dotnet/tools"
   - chmod +x utils/build.sh
   - chmod +x utils/deploy.sh
 script:

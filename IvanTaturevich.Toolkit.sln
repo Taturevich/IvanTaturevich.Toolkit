@@ -13,6 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "utils", "utils", "{B961BA17
 	ProjectSection(SolutionItems) = preProject
 		utils\build.sh = utils\build.sh
 		utils\deploy.sh = utils\deploy.sh
+		utils\sonar.sh = utils\sonar.sh
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IvanT.Utilities", "src\IvanT.Utilities\IvanT.Utilities.csproj", "{949EA4BC-F224-4547-A188-36CE57DA1337}"

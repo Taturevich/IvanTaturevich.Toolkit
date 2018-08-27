@@ -7,11 +7,8 @@ skip_cleanup: true
 env:
   - PATH="$PATH:~/.dotnet/tools"
 before_install:
-  - dotnet tool install --global dotnet-sonarscanner --version 4.3.1
-  - echo $env:PATH
-  - dotnet-sonarscanner begin /k:"taturevich_toolkit" /d:sonar.organization="taturevich-github" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.login="28d273d7cb3d188f13ceab30ea3ede984161f09f"
   - chmod +x utils/build.sh
-  - dotnet-sonarscaner end /d:sonar.login="28d273d7cb3d188f13ceab30ea3ede984161f09f"
+  - chmod +x utils/sonar.sh
 script:
   - utils/build.sh --quiet verify
 branches:
